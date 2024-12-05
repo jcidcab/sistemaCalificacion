@@ -1,0 +1,83 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: white; /* Fondo blanco */
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Contenedor principal */
+  #app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Contenedor de rating */
+  .rating {
+    margin-top: 100px; /* Espaciado superior */
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+  }
+  
+  /* Estilos de las estrellas (items de rating) */
+  .item {
+    background-color: yellow; /* Color de fondo inicial */
+    -webkit-mask-image: url(star.svg); /* Usamos una imagen SVG para crear la forma de estrella */
+    mask-image: url(star.svg); /* Usamos la máscara para crear una estrella */
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Estado cuando la estrella está llena */
+  .item.item-full {
+    background-color: #27E7E1; /* Color azul cuando la estrella está llena */
+  }
+  
+  /* Efecto al pasar el ratón (hover) */
+  .item:hover {
+    transform: scale(1.1); /* Efecto de zoom */
+    background-color: #80deea; /* Color azul más claro al pasar el ratón */
+  }
+  
+  /* Texto debajo de la calificación */
+  .rating-text {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 600px) {
+    .rating {
+      max-width: 200px; /* Menor tamaño en pantallas más pequeñas */
+    }
+  
+    .item {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .rating-text {
+      font-size: 16px;
+    }
+  }
+  
